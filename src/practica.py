@@ -17,7 +17,7 @@ def load_dataset(path):
     dataset = pd.read_csv(path, header=0, delimiter=',')
     return dataset
 
-dataset_rock = load_dataset('./Data/0.csv')
+dataset_rock = load_dataset('../Data/0.csv')
 dataset_rock.columns = [
 "reading 1 sensor 1", "reading 1 sensor 2","reading 1 sensor 3","reading 1 sensor 4","reading 1 sensor 5","reading 1 sensor 6","reading 1 sensor 7", "reading 1 sensor 8",
 "reading 2 sensor 1", "reading 2 sensor 2","reading 2 sensor 3","reading 2 sensor 4","reading 2 sensor 5","reading 2 sensor 6","reading 2 sensor 7", "reading 2 sensor 8",
@@ -28,7 +28,7 @@ dataset_rock.columns = [
 "reading 7 sensor 1", "reading 7 sensor 2","reading 7 sensor 3","reading 7 sensor 4","reading 7 sensor 5","reading 7 sensor 6","reading 7 sensor 7", "reading 7 sensor 8",
 "reading 8 sensor 1", "reading 8 sensor 2","reading 8 sensor 3","reading 8 sensor 4","reading 8 sensor 5","reading 8 sensor 6","reading 8 sensor 7", "reading 8 sensor 8",
 "result"]
-dataset_scissors = load_dataset('./Data/1.csv')
+dataset_scissors = load_dataset('../Data/1.csv')
 dataset_scissors.columns = [
 "reading 1 sensor 1", "reading 1 sensor 2","reading 1 sensor 3","reading 1 sensor 4","reading 1 sensor 5","reading 1 sensor 6","reading 1 sensor 7", "reading 1 sensor 8",
 "reading 2 sensor 1", "reading 2 sensor 2","reading 2 sensor 3","reading 2 sensor 4","reading 2 sensor 5","reading 2 sensor 6","reading 2 sensor 7", "reading 2 sensor 8",
@@ -39,7 +39,7 @@ dataset_scissors.columns = [
 "reading 7 sensor 1", "reading 7 sensor 2","reading 7 sensor 3","reading 7 sensor 4","reading 7 sensor 5","reading 7 sensor 6","reading 7 sensor 7", "reading 7 sensor 8",
 "reading 8 sensor 1", "reading 8 sensor 2","reading 8 sensor 3","reading 8 sensor 4","reading 8 sensor 5","reading 8 sensor 6","reading 8 sensor 7", "reading 8 sensor 8",
 "result"]
-dataset_paper = load_dataset('./Data/2.csv')
+dataset_paper = load_dataset('../Data/2.csv')
 dataset_paper.columns = [
 "reading 1 sensor 1", "reading 1 sensor 2","reading 1 sensor 3","reading 1 sensor 4","reading 1 sensor 5","reading 1 sensor 6","reading 1 sensor 7", "reading 1 sensor 8",
 "reading 2 sensor 1", "reading 2 sensor 2","reading 2 sensor 3","reading 2 sensor 4","reading 2 sensor 5","reading 2 sensor 6","reading 2 sensor 7", "reading 2 sensor 8",
@@ -50,7 +50,7 @@ dataset_paper.columns = [
 "reading 7 sensor 1", "reading 7 sensor 2","reading 7 sensor 3","reading 7 sensor 4","reading 7 sensor 5","reading 7 sensor 6","reading 7 sensor 7", "reading 7 sensor 8",
 "reading 8 sensor 1", "reading 8 sensor 2","reading 8 sensor 3","reading 8 sensor 4","reading 8 sensor 5","reading 8 sensor 6","reading 8 sensor 7", "reading 8 sensor 8",
 "result"]
-dataset_ok = load_dataset('./Data/3.csv')
+dataset_ok = load_dataset('../Data/3.csv')
 dataset_ok.columns = [
 "reading 1 sensor 1", "reading 1 sensor 2","reading 1 sensor 3","reading 1 sensor 4","reading 1 sensor 5","reading 1 sensor 6","reading 1 sensor 7", "reading 1 sensor 8",
 "reading 2 sensor 1", "reading 2 sensor 2","reading 2 sensor 3","reading 2 sensor 4","reading 2 sensor 5","reading 2 sensor 6","reading 2 sensor 7", "reading 2 sensor 8",
@@ -98,7 +98,7 @@ for kern in kernel_lst:
         logireg = LogisticRegression(C=1.0, fit_intercept=True, penalty='l2', max_iter = 1000)
         logireg.fit(x_t, y_t)
 
-        print("Correct classification Logistic ", part, "% of the data: ", logireg.score(x_v, y_v))
+        print("Correct classification Logistic ", part * 100, "% of the data: ", logireg.score(x_v, y_v))
         fi = time.time()
         total = fi - inici
         print("Ha tardat: ", total, " segons")
@@ -114,7 +114,7 @@ for part in particions:
     total = 0
     for v in cv:
         total += v
-    print("Mean accuracy with ", part, "% of the data: ", round(total/10, 4))
+    print("Mean accuracy with ", part * 100, "% of the data: ", round(total/10, 4))
     fi = time.time()
     total = fi - inici
     print("Ha tardat: ", total, " segons")
