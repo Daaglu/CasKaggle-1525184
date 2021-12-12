@@ -6,10 +6,10 @@
 ## Resum
 El
 dataset utilitza les dades recollides per 8 sensors col·locats al braç d'una persona en diferents posicions mentres aquesta realitzava un dels següents gestos:
-- pedra (puny tancat)
-- tissora (dit índex i mig estirats)
-- paper (tots els dits estirats)
-- ok (polze i índex tocant-se, la resta tancats)
+- Pedra (puny tancat)
+- Tissora (dit índex i mig estirats)
+- Paper (tots els dits estirats)
+- Ok (polze i índex tocant-se, la resta tancats)
 
 Les mesures es van prendre en 8 tandes.
 Per tant tindre 1 columna per a cada sensor durant cada una de les tandes, és a dir, tindrem 64 columnes.
