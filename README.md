@@ -52,13 +52,15 @@ KNN|train_size=0.7, numero vecinos = [1,2,3,4,5,6,7,8,9]|Accuracy = [1,0.84,0.78
 
 
 ## Demo
-Per tal de fer una prova és pot fer amb l'arxius demo.py, dins la carpeta "Demo".
+Per tal de fer una prova és pot fer amb l'arxius demo.py, dins la carpeta "Demo". Executant a la terminal python3 demo/demo.py
+
 Aquest arxiu executa una versió de les proves però amb un dataset reduït, de 500 files per a cada gest.
 
 ## Conclusions
-El millor model que he trobat és el Decission-tree amb un train-size del 30% de les dades.
-De fet quan major el train-size pitjor classifica.
-La resta de models provats classifican quasi igual de bé, exceptuant la Regressió Logística que té una performance del 30% en general.
+El millor model que he trobat és el Decission-tree amb un train-size del 30% de les dades. Resulta contraintuitiu ja que teoricament hauria de classifcar millor amb un train-set major, crec que això pot deures a que les medicions dels gestos no són prou diferènciades entre elles, i per això posar més dades fa que s'assemblin més tots els gestos entre si.
+
+La resta de models provats classifiquen quasi igual de bé, exceptuant la Regressió Logística que té una performance del 30% en general.
+
 En el cas del KNN amb pocs veïns també dona molt bon resultat però clar, pot ser atzar degut a que casualment triï el veí correctes.
 És per això que amb KNN el resultats que mirem són els dels 6-7-8-9 veïns, i tot i ser bons el decission-tree segueix sent el millor.
 
