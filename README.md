@@ -42,13 +42,12 @@ Com és un número relativament baix indica que els valors estan agrupats, per a
 ### Model
 Models:
 |Model|Hiperparametre|Mètrica|Temps segons|
+|-----|--------------|-------|------------|
 Logistic Regression Kernel = linear|train_size = [0.3,0.5,0.7,0.8], C=1.0, fit_intercept=True, penalty='l2'|score=[0.34,0.35,0.35,0.33]|temps=[0.49,1.35,3.07,5.23]
 Logistic Regression Kernel = poly|train_size = [0.3,0.5,0.7,0.8], C=1.0, fit_intercept=True, penalty='l2'|score=[0.33,0.34,0.34,0.34]|temps=[0.64,1.84,3.84,5.76]
 Logistic Regression Kernel = rbf|train_size = [0.3,0.5,0.7,0.8], C=1.0, fit_intercept=True, penalty='l2'|score=[0.34,0.35,0.35,0.33]|temps=[0.41,1.20,2.69,4.45]
 Logistic Regression Kernel = sigmoid|train_size = [0.3,0.5,0.7,0.8], C=1.0, fit_intercept=True, penalty='l2'|score=[0.34,0.33,0.36,0.33]|temps=[0.42,1.23,3.03,5.06]
-
 Decission Tree|train_size = [0.3,0.5,0.7,0.8], random_state=0|mean accuracy=0.77|temps=[4.60,3.02,2.00,1.42]
-
 KNN|train_size=0.7, numero vecinos = [1,2,3,4,5,6,7,8,9]|Accuracy = [1,0.84,0.78,0.77,0.75,0.73,0.73,0.72,0.71], Precission = [1,0.84,0.78,0.77,0.75,0.73,0.73,0.72,0.72], Recall = [1,0.84,0.78,0.77,0.75,0.73,0.73,0.72,0.71]|temps = [0.61,9.2,9.3,9.4,9.1,9.4,9.4,9.4,10.7]
 
 
