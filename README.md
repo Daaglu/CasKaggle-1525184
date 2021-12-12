@@ -6,10 +6,10 @@
 ## Resum
 El
 dataset utilitza les dades recollides per 8 sensors col·locats al braç d'una persona en diferents posicions mentres aquesta realitzava un dels següents gestos:
-- pedra (puny tancat)
-- tissora (dit índex i mig estirats)
-- paper (tots els dits estirats)
-- ok (polze i índex tocant-se, la resta tancats)
+- Pedra (puny tancat)
+- Tissora (dit índex i mig estirats)
+- Paper (tots els dits estirats)
+- Ok (polze i índex tocant-se, la resta tancats)
 
 Les mesures es van prendre en 8 tandes.
 Per tant tindre 1 columna per a cada sensor durant cada una de les tandes, és a dir, tindrem 64 columnes.
@@ -42,27 +42,37 @@ Com és un número relativament baix indica que els valors estan agrupats, per a
 ### Model
 Models:
 |Model|Hiperparametre|Mètrica|Temps segons|
+|-----|--------------|-------|------------|
 Logistic Regression Kernel = linear|train_size = [0.3,0.5,0.7,0.8], C=1.0, fit_intercept=True, penalty='l2'|score=[0.34,0.35,0.35,0.33]|temps=[0.49,1.35,3.07,5.23]
 Logistic Regression Kernel = poly|train_size = [0.3,0.5,0.7,0.8], C=1.0, fit_intercept=True, penalty='l2'|score=[0.33,0.34,0.34,0.34]|temps=[0.64,1.84,3.84,5.76]
 Logistic Regression Kernel = rbf|train_size = [0.3,0.5,0.7,0.8], C=1.0, fit_intercept=True, penalty='l2'|score=[0.34,0.35,0.35,0.33]|temps=[0.41,1.20,2.69,4.45]
 Logistic Regression Kernel = sigmoid|train_size = [0.3,0.5,0.7,0.8], C=1.0, fit_intercept=True, penalty='l2'|score=[0.34,0.33,0.36,0.33]|temps=[0.42,1.23,3.03,5.06]
-
 Decission Tree|train_size = [0.3,0.5,0.7,0.8], random_state=0|mean accuracy=0.77|temps=[4.60,3.02,2.00,1.42]
-
 KNN|train_size=0.7, numero vecinos = [1,2,3,4,5,6,7,8,9]|Accuracy = [1,0.84,0.78,0.77,0.75,0.73,0.73,0.72,0.71], Precission = [1,0.84,0.78,0.77,0.75,0.73,0.73,0.72,0.72], Recall = [1,0.84,0.78,0.77,0.75,0.73,0.73,0.72,0.71]|temps = [0.61,9.2,9.3,9.4,9.1,9.4,9.4,9.4,10.7]
 
 
 ## Demo
-Per tal de fer una prova és pot fer:
+Per tal de fer una prova és pot fer amb l'arxius demo.py, dins la carpeta "Demo". Executant a la terminal python3 demo/demo.py
+
+Aquest arxiu executa una versió de les proves però amb un dataset reduït, de 500 files per a cada gest.
 
 ## Conclusions
-El millor model que he trobat és el Decission-tree amb un train-size del 30% de les dades.
-De fet quan major el train-size pitjor classifica.
-La resta de models provats classifican quasi igual de bé, exceptuant la Regressió Logística que té una performance del 30% en general.
+El millor model que he trobat és el Decission-tree amb un train-size del 30% de les dades. Resulta contraintuitiu ja que teoricament hauria de classifcar millor amb un train-set major, crec que això pot deures a que les medicions dels gestos no són prou diferènciades entre elles, i per això posar més dades fa que s'assemblin més tots els gestos entre si.
+
+La resta de models provats classifiquen quasi igual de bé, exceptuant la Regressió Logística que té una performance del 30% en general.
+
 En el cas del KNN amb pocs veïns també dona molt bon resultat però clar, pot ser atzar degut a que casualment triï el veí correctes.
 És per això que amb KNN el resultats que mirem són els dels 6-7-8-9 veïns, i tot i ser bons el decission-tree segueix sent el millor.
 
 Del Decission-tree he mirat les corves de Precision-Recall i ROC curve. Classifica aproximadament igual totes les classes però té problemes per fer-ho amb la classe de paper.
 Crec que la classe que millor classifica és roca ja que és la que té els dits més diferents respectivament als altres gestos, ja que estan tots tancats.
 En canvi, tissora té molta semblança amb l'ok i paper, ja que té dits oberts i això crec que pot fer que tingui valors semblants i per tant costa de classificar.
+
 ![img.png](images/img.png)
+
+## Idees per treballar en un futur
+En un futur es podria probar a juntar les columnes que siguin del mateix sensor en una sola.
+Així tindriem les dades més concentrades i solament 8 columnes per treballar, el que podria millorar el temps de resposta i els resultats.
+
+## Llicencia
+El projecte d'ha desenvolupat amb Python 3.9
