@@ -72,3 +72,6 @@ En canvi, tissora té molta semblança amb l'ok i paper, ja que té dits oberts 
 ## Idees per treballar en un futur
 En un futur es podria probar a juntar les columnes que siguin del mateix sensor en una sola.
 Així tindriem les dades més concentrades i solament 8 columnes per treballar, el que podria millorar el temps de resposta i els resultats.
+
+## Llicencia
+El projecte d'ha desenvolupat amb Python 3.9
