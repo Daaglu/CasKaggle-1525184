@@ -68,3 +68,7 @@ Crec que la classe que millor classifica és roca ja que és la que té els dits
 En canvi, tissora té molta semblança amb l'ok i paper, ja que té dits oberts i això crec que pot fer que tingui valors semblants i per tant costa de classificar.
 
 ![img.png](images/img.png)
+
+## Idees per treballar en un futur
+En un futur es podria probar a juntar les columnes que siguin del mateix sensor en una sola.
+Així tindriem les dades més concentrades i solament 8 columnes per treballar, el que podria millorar el temps de resposta i els resultats.
