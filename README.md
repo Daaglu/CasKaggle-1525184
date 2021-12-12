@@ -53,7 +53,8 @@ KNN|train_size=0.7, numero vecinos = [1,2,3,4,5,6,7,8,9]|Accuracy = [1,0.84,0.78
 
 
 ## Demo
-Per tal de fer una prova és pot fer:
+Per tal de fer una prova és pot fer amb l'arxius demo.py, dins la carpeta "Demo".
+Aquest arxiu executa una versió de les proves però amb un dataset reduït, de 500 files per a cada gest.
 
 ## Conclusions
 El millor model que he trobat és el Decission-tree amb un train-size del 30% de les dades.
@@ -65,4 +66,5 @@ En el cas del KNN amb pocs veïns també dona molt bon resultat però clar, pot 
 Del Decission-tree he mirat les corves de Precision-Recall i ROC curve. Classifica aproximadament igual totes les classes però té problemes per fer-ho amb la classe de paper.
 Crec que la classe que millor classifica és roca ja que és la que té els dits més diferents respectivament als altres gestos, ja que estan tots tancats.
 En canvi, tissora té molta semblança amb l'ok i paper, ja que té dits oberts i això crec que pot fer que tingui valors semblants i per tant costa de classificar.
+
 ![img.png](images/img.png)
